@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>GameHub</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <meta name="theme-color" content="#0d0f12" />
+    <link rel="icon" href="assets/icon-192.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app" class="app">
+      <header class="navbar">
+        <div class="brand" data-route="/">🎮 GameHub</div>
+        <nav class="nav-links">
+          <button class="nav-btn" data-route="/">Home</button>
+          <button class="nav-btn" data-route="/games">Games</button>
+          <button class="nav-btn" data-route="/modes">Modes</button>
+          <button class="nav-btn" data-route="/about">About</button>
+          <button class="nav-btn" data-route="/contact">Contact</button>
+          <button class="nav-btn" data-route="/settings">Settings</button>
+        </nav>
+        <div class="nav-actions">
+          <button id="btn-theme" title="Toggle theme">🌓</button>
+          <button id="btn-prev" title="Prev Track">⏮</button>
+          <button id="btn-music" title="Toggle music">🔊</button>
+          <button id="btn-next" title="Next Track">⏭</button>
+          <button id="btn-sfx" title="Toggle SFX">🎵</button>
+          <button id="btn-profile" title="Profile">👤</button>
+        </div>
+      </header>
+
+      <main id="view-root" class="view-root"></main>
+
+      <footer class="footer">© <span id="year"></span> GameHub · <span id="now-playing"></span></footer>
+
+      <!-- Game Overlay -->
+      <div id="game-overlay" class="game-overlay hidden" role="dialog" aria-modal="true">
+        <div class="game-frame">
+          <div class="game-toolbar">
+            <div class="left">
+              <span id="game-title">Game</span>
+            </div>
+            <div class="right">
+              <button id="btn-game-leaderboard" title="Leaderboard">🏆</button>
+              <button id="btn-game-pause" title="Pause/Resume (Space)">⏯</button>
+              <button id="btn-game-fullscreen" title="Fullscreen (F)">⛶</button>
+              <button id="btn-game-exit" title="Exit">✖</button>
+            </div>
+          </div>
+          <div id="game-container" class="game-container">
+            <!-- Canvas host injected here -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="src/app.js"></script>
+  </body>
+  </html>
+
+
